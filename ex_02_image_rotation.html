@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>제목</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		var list = ["movie01","movie02","movie03","movie04","movie05","movie06","movie07","movie08","movie09","movie10","movie11","movie12","movie13","movie14","movie15","movie16","movie17","movie18","movie19","movie20"];
+		for(i=0; i<list.length; i++){
+			$("#imgList").append("<a href='#'><img src='../img/"+list[i]+".png'/></a>");
+		}
+		$("#imgList img").css("width","82px").css("height","114px");
+		$("#imgList img").css("position","absolute");//겹처서 하나로 보이게한다.
+		
+		//
+		setInterval("moveImage()",500);
+	});
+	function moveImage(){
+		//appendTo()를 이용하여 첫번째 이미지를 선택하여 마지막에 추가
+		$("#imgList>a").first().appendTo("#imgList");
+	}
+</script>
+</head>
+<body>
+<div id = "imgList"></div>
+</body>
+</html>
